@@ -1,0 +1,163 @@
+.body_major {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 7%;
+}
+
+.section_right {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    padding-right: 4%;
+}
+
+.section_left {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    padding-left: 8%;
+    justify-content: space-around;
+}
+
+.Img1 {
+    display: flex;
+    border-radius: 15px;
+}
+
+.Img2 {
+    display: flex;
+    border-radius: 10px;
+}
+
+.Img3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.etiqueta {
+    height: 8%;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border: 1px solid #d3a929;
+    background-color: white;
+}
+
+.button_buy {
+    display: flex;
+    color: #d3a929;
+    text-decoration: none;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.add_favourite {
+    display: flex;
+    color: #d3a929;
+    text-decoration: none;
+    justify-content: space-around;
+    width: 35%;
+}
+
+.my_like {
+    display: flex;
+    color: #d3a929;
+    text-decoration: none;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.text_right {
+    display: flex;
+    width: 20%;
+    color: grey;
+}
+
+.title_body {
+    display: flex;
+    font-size: 3rem;
+}
+
+.text_left {
+    font-size: 2em;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40%;
+    background-color: white;
+}
+
+.profile_2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.profile {
+    border: 1px solid #d3a929;
+    border-radius: 2%;
+    padding: 2%;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.stars {
+    display: flex;
+    width: 30%;
+    color: rgb(255, 230, 0);
+    background-color: white;
+}
+
+.user {
+    display: flex;
+    font-size: 2rem;
+    background-color: white;
+}
+
+.hr {
+    width: 100%;
+}
+
+.duke_title {
+    background-color: white;
+}
+
+.star1 {
+    background-color: white;
+}
+
+.text_profile {
+    background-color: white;
+}
+
+.tex_profile2 {
+    background-color: white;
+}
+
+.body_secondary {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description {
+    font-size: 2em;
+    padding-left: 8%;
+}
+
+.text_body_secondary {
+    font-size: 1.4em;
+    padding-left: 8%;
+}
