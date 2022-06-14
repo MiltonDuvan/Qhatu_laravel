@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('descripcion');
             $table->text('descripcion2');
             $table->unsignedBigInteger('indigenas_id');
+            $table->foreign('indigenas_id')->references('id')->on('indigenas')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

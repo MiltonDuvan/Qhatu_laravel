@@ -46,6 +46,7 @@ class ArtesaniaController extends Controller
      */
     public function show(artesania $artesania)
     {
+        
         return view('detail_craft.detail_craft');
     }
 
