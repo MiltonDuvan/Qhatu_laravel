@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\artesania;
+use App\Models\imagen;
 use Illuminate\Http\Request;
 
 class ArtesaniaController extends Controller
@@ -12,17 +13,13 @@ class ArtesaniaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $artesanias=artesania::join("imagens","artesanias.id","=",'imagens.artesanias_id')->where("artesanias.id",1)->select('nombre','precio','imagen')->get();
-        $artesanias2=artesania::join("imagens","artesanias.id","=",'imagens.artesanias_id')->where("artesanias.id",2)->select('nombre','precio','imagen')->get();
-        $artesanias3=artesania::join("imagens","artesanias.id","=",'imagens.artesanias_id')->where("artesanias.id",3)->select('nombre','precio','imagen')->get();
-        $artesanias4=artesania::join("imagens","artesanias.id","=",'imagens.artesanias_id')->where("artesanias.id",4)->select('nombre','precio','imagen')->get();
-        $artesanias5=artesania::join("imagens","artesanias.id","=",'imagens.artesanias_id')->where("artesanias.id",5)->select('nombre','precio','imagen')->get();
-        $artesanias6=artesania::join("imagens","artesanias.id","=",'imagens.artesanias_id')->where("artesanias.id",3)->select('nombre','precio','imagen')->get();
-        $artesanias7=artesania::join("imagens","artesanias.id","=",'imagens.artesanias_id')->where("artesanias.id",1)->select('nombre','precio','imagen')->get();
-        $artesanias8=artesania::join("imagens","artesanias.id","=",'imagens.artesanias_id')->where("artesanias.id",4)->select('nombre','precio','imagen')->get();
-        return view('index.index', compact('artesanias','artesanias2','artesanias3','artesanias4','artesanias5','artesanias6','artesanias7','artesanias8'));
+         $artesanias=artesania::all();
+        //$cantidad=imagen::findOrFail($id);
+         $imagens=artesania::join("imagens","artesanias.id","=","imagens.artesanias_id")->where("artesanias.id",1)->select('imagen')->get();
+         return view('index.index',compact('artesanias','imagens'));
 
     }
 
@@ -33,7 +30,7 @@ class ArtesaniaController extends Controller
      */
     public function create()
     {
-            
+
     }
 
     /**
@@ -55,7 +52,7 @@ class ArtesaniaController extends Controller
      */
     public function show(artesania $artesania)
     {
-        
+
         return view('detail_craft.detail_craft');
     }
 

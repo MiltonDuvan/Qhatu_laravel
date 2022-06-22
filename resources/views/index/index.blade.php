@@ -51,7 +51,30 @@
     </section>
 
     <section class="container-fluid d-flex  justify-content-evenly row row-cols-4">
-        <a href="{{ url('detail_craft') }}"class=" card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4 text-decoration-none"
+        <ul class="product-list grid-products equal-container">
+            <section class="d-flex justify-content-between">
+                @foreach ($artesanias as $artesanias)
+                <li>
+                    <a href="{{ url('detail_craft') }}"class=" card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4 text-decoration-none"
+                    style="width: 22rem;">
+                    @foreach ($imagens as $imagen)
+                    <img src="{{$imagen->imagen}}" class="card-img-top" alt="img" height="300"
+                        width="200">
+                    @endforeach
+                    <article class="card-body">
+                        <section class="d-flex justify-content-between">
+                                <h5 class="card-title">{{ $artesanias->nombre }}</h5>
+                                <img class="member-avatar rounded-circle" src="{{ $artesanias->imagen }}" height="40"
+                                    width="40">
+                        </section>
+                        <h6 class="text-success"> $ {{$artesanias->precio }}</h6>
+                    </article>
+                </a>
+                </li>
+                @endforeach
+
+        </ul>
+        {{-- <a href="{{ url('detail_craft') }}"class=" card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4 text-decoration-none"
             style="width: 22rem;">
             <img src="https://placeimg.com/640/480/arch" class="card-img-top" alt="img" height="300"
                 width="200">
@@ -65,106 +88,16 @@
                 <h6 class="text-success"> $ {{$artesanias->precio }}</h6>
                 @endforeach
             </article>
-        </a>
+        </a> --}}
 
 
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="https://placeimg.com/640/480/dog" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    @foreach ($artesanias2 as $artesanias2)
-                        <h6 class="card-title">{{ $artesanias2->nombre }}</h6>
-                        <img class="member-avatar rounded-circle " src="{{$artesanias2->imagen}}" height="40" width="40">
-                </section>
-                <h6 class="text-success"> $ {{$artesanias2->precio }} </h6>
-                @endforeach
-            </article>
-        </article>
 
 
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="https://placeimg.com/640/480/tech/grayscale" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    @foreach ($artesanias3 as $artesanias3) 
-                    <h5 class="card-title">{{$artesanias3->nombre}}</h5>
-                    <img class="member-avatar rounded-circle " src="{{$artesanias3->imagen}}" height="40" width="40">
-                </section>
-                <h6 class="text-success"> $ {{$artesanias3->precio}}</h6>
-                @endforeach
-            </article>
-        </article>
 
 
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="https://placeimg.com/640/480/nature/sepia" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    @foreach ($artesanias4 as $artesanias4)
-                    <h5 class="card-title">{{$artesanias4->nombre}}</h5>
-                    <img class="member-avatar rounded-circle " src="{{$artesanias4->imagen}}" height="40" width="40">
-                </section>
-                <h6 class="text-success"> $ {{$artesanias4->precio}}</h6>
-                @endforeach
-            </article>
-        </article>
 
 
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="https://placeimg.com/640/480/animals" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    @foreach ($artesanias5 as $artesanias5)
-                    <h5 class="card-title">{{$artesanias5->nombre}}</h5>
-                    <img class="member-avatar rounded-circle " src="{{$artesanias5->imagen}}" height="40" width="40">
-                </section>
-                <h6 class="text-success"> $ {{$artesanias5->precio}}</h6>
-                @endforeach
-            </article>
-        </article>
 
-
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="https://placeimg.com/640/480/nature/grayscale" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    @foreach ($artesanias6 as $artesanias6)
-                    <h5 class="card-title">{{$artesanias6->nombre}}</h5>
-                    <img class="member-avatar rounded-circle " src="{{$artesanias6->imagen}}" height="40" width="40">
-                </section>
-                <h6 class="text-success"> $ {{$artesanias6->precio}}</h6>
-                @endforeach
-            </article>
-        </article>
-
-
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="https://placeimg.com/640/480/tech" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    @foreach ($artesanias7 as $artesanias7)
-                    <h5 class="card-title">{{$artesanias7->nombre}}</h5>
-                    <img class="member-avatar rounded-circle " src="{{$artesanias7->imagen}}" height="40" width="40">
-                </section>
-                <h6 class="text-success"> $ {{$artesanias7->precio}}</h6>
-                @endforeach
-            </article>
-        </article>
-
-
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="https://placeimg.com/640/480/nature" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    @foreach ($artesanias8 as $artesanias8)
-                    <h5 class="card-title">{{$artesanias8->nombre}}</h5>
-                    <img class="member-avatar rounded-circle " src="{{$artesanias8->imagen}}" height="40" width="40">
-                </section>
-                <h6 class="text-success"> $ {{$artesanias8->precio}}</h6>
-                @endforeach
-            </article>
-        </article>
-    </section>
     <br>
     <section>
         <x-footer />
