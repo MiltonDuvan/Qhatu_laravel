@@ -14,15 +14,20 @@ class ArtesaniaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index()
+    public function index(imagen $imagen)
     {
          $artesanias=artesania::all();
-        //$cantidad=imagen::findOrFail($id);
-         $imagens=artesania::join("imagens","artesanias.id","=","imagens.artesanias_id")->where("artesanias.id",1)->select('imagen')->get();
+         $imagens=imagen::all();
+        //$imagens=artesania::join("imagens","artesanias.id","=","imagens.artesanias_id")->where("artesanias.id",1)->select('imagen')->get();
          return view('index.index',compact('artesanias','imagens'));
 
     }
 
+    public function show(artesania $artesania)
+    {
+
+        return view('detail_craft.detail_craft');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -50,11 +55,7 @@ class ArtesaniaController extends Controller
      * @param  \App\Models\artesania  $artesania
      * @return \Illuminate\Http\Response
      */
-    public function show(artesania $artesania)
-    {
 
-        return view('detail_craft.detail_craft');
-    }
 
     /**
      * Show the form for editing the specified resource.

@@ -53,21 +53,21 @@
     <section class="container-fluid d-flex  justify-content-evenly row row-cols-4">
         <ul class="product-list grid-products equal-container">
             <section class="d-flex justify-content-between">
-                @foreach ($artesanias as $artesanias)
+                @foreach ($artesanias as $artesania)
                 <li>
                     <a href="{{ url('detail_craft') }}"class=" card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4 text-decoration-none"
                     style="width: 22rem;">
                     @foreach ($imagens as $imagen)
-                    <img src="{{$imagen->imagen}}" class="card-img-top" alt="img" height="300"
-                        width="200">
+                        <img src="{{$imagen->imagen}}" class="card-img-top" alt="img" height="300"
+                         width="200">
                     @endforeach
                     <article class="card-body">
                         <section class="d-flex justify-content-between">
-                                <h5 class="card-title">{{ $artesanias->nombre }}</h5>
-                                <img class="member-avatar rounded-circle" src="{{ $artesanias->imagen }}" height="40"
+                                <h5 class="card-title">{{ $artesania->nombre }}</h5>
+                                <img class="member-avatar rounded-circle" src="{{ $artesania->imagen }}" height="40"
                                     width="40">
                         </section>
-                        <h6 class="text-success"> $ {{$artesanias->precio }}</h6>
+                        <h6 class="text-success"> $ {{$artesania->precio }}</h6>
                     </article>
                 </a>
                 </li>
