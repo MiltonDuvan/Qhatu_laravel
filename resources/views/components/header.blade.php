@@ -32,7 +32,7 @@
         <header class=" header d-flex flex-column container mw-100  p-0 m-0 pb-2">
             <section class="nav-1-Qhatu nav contaier-fixed  justify-content-between  px-4 mt-2 " id="nav-1-Qhatu">
                 <h4 class="fs-5 nav_Qhatu mt-4">Las artesanias del Cauca en tu pantalla!</h2>
-                    <h4 class="h1  nav_Qhatu "><a class="nav-link2 nav_Qhatu2 fs-1" href="#">Qhatu</a></h4>
+                    <h4 class="h1  nav_Qhatu "><a class="nav-link2 nav_Qhatu2 fs-1" href="http://127.0.0.1:8000/">Qhatu</a></h4>
                     <article class="contaier-fixed">
                         <h2 class="fs-5 nav_Qhatu">+57 325 999 90 90</h2>
                         <h2 class="fs-6 nav_Qhatu">Qhatu_Artesanias@gmail.com</h2>

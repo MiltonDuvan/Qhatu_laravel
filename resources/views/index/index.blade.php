@@ -8,10 +8,17 @@
             <h1>Artesanias Indigenas</h1>
             <h2>Descubre los tesoros artesanales escondidos en el cauca</h2>
             <p>
-               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit saepe laboriosam iure voluptatibus hic rem, cupiditate provident ex sapiente debitis fugiat, vel deserunt earum ipsa quam distinctio, aut maiores excepturi?
-               Dignissimos blanditiis mollitia consectetur expedita deserunt aspernatur ipsa, fuga ab tempora obcaecati fugiat repudiandae atque! Doloremque, laborum! Odio iusto quis dolore voluptate earum soluta, sapiente sit, distinctio aliquid porro laudantium?
-               Nisi, impedit. Voluptatibus impedit consequuntur, illum laudantium nam commodi porro cumque, sequi explicabo rem saepe quisquam omnis vel asperiores dicta alias! Cupiditate at officiis ipsam provident maxime corrupti unde earum!
-               Autem nisi veritatis nobis illum. Blanditiis officia ipsa placeat numquam at suscipit sunt fuga et animi maxime veniam expedita dolorem maiores illo atque deleniti ut, asperiores natus hic eius inventore.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit saepe laboriosam iure voluptatibus
+                hic rem, cupiditate provident ex sapiente debitis fugiat, vel deserunt earum ipsa quam distinctio, aut
+                maiores excepturi?
+                Dignissimos blanditiis mollitia consectetur expedita deserunt aspernatur ipsa, fuga ab tempora obcaecati
+                fugiat repudiandae atque! Doloremque, laborum! Odio iusto quis dolore voluptate earum soluta, sapiente
+                sit, distinctio aliquid porro laudantium?
+                Nisi, impedit. Voluptatibus impedit consequuntur, illum laudantium nam commodi porro cumque, sequi
+                explicabo rem saepe quisquam omnis vel asperiores dicta alias! Cupiditate at officiis ipsam provident
+                maxime corrupti unde earum!
+                Autem nisi veritatis nobis illum. Blanditiis officia ipsa placeat numquam at suscipit sunt fuga et animi
+                maxime veniam expedita dolorem maiores illo atque deleniti ut, asperiores natus hic eius inventore.
             </p>
         </article>
         <section id="carouselExampleControls" class="carrusel carousel slide col-12  col-md-6  col-xxl-6"
@@ -44,96 +51,61 @@
     </section>
 
     <section class="container-fluid d-flex  justify-content-evenly row row-cols-4">
-        <a  href="{{url('detail_craft')}}"class=" card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4 text-decoration-none" style="width: 22rem;" >
-            <img src="img/producto1.png" class="card-img-top" alt="img" height="300" width="200">
+        <ul class="product-list grid-products equal-container">
+            <section class="d-flex justify-content-between">
+                @foreach ($artesanias as $artesania)
+                <li>
+                    <a href="{{ url('detail_craft') }}"class=" card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4 text-decoration-none"
+                    style="width: 22rem;">
+                    @foreach ($imagens as $imagen)
+                        <img src="{{$imagen->imagen}}" class="card-img-top" alt="img" height="300"
+                         width="200">
+                    @endforeach
+                    <article class="card-body">
+                        <section class="d-flex justify-content-between">
+                                <h5 class="card-title">{{ $artesania->nombre }}</h5>
+                                <img class="member-avatar rounded-circle" src="{{ $artesania->imagen }}" height="40"
+                                    width="40">
+                        </section>
+                        <h6 class="text-success"> $ {{$artesania->precio }}</h6>
+                    </article>
+                </a>
+                </li>
+                @endforeach
+
+        </ul>
+        {{-- <a href="{{ url('detail_craft') }}"class=" card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4 text-decoration-none"
+            style="width: 22rem;">
+            <img src="https://placeimg.com/640/480/arch" class="card-img-top" alt="img" height="300"
+                width="200">
             <article class="card-body">
                 <section class="d-flex justify-content-between">
-                    <h5 class="card-title">Cestas de Época</h5>
-                    <img class="member-avatar rounded-circle " src="img/persona.png" height="40" width="40">
+                    @foreach ($artesanias as $artesanias)
+                        <h5 class="card-title">{{ $artesanias->nombre }}</h5>
+                        <img class="member-avatar rounded-circle" src="{{ $artesanias->imagen }}" height="40"
+                            width="40">
                 </section>
-                <h6 class="text-success">$100000</h6>
+                <h6 class="text-success"> $ {{$artesanias->precio }}</h6>
+                @endforeach
             </article>
-        </a>
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="img/producto2.png" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    <h5 class="card-title">Cestas de Época</h5>
-                    <img class="member-avatar rounded-circle " src="img/persona.png" height="40" width="40">
-                </section>
-                <h6 class="text-success">$100000</h6>
-            </article>
-        </article>
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="img/producto3.png" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    <h5 class="card-title">Cestas de Época</h5>
-                    <img class="member-avatar rounded-circle " src="img/persona.png" height="40" width="40">
-                </section>
-                <h6 class="text-success">$100000</h6>
-            </article>
-        </article>
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="img/producto1.png" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    <h5 class="card-title">Cestas de Época</h5>
-                    <img class="member-avatar rounded-circle " src="img/persona.png" height="40" width="40">
-                </section>
-                <h6 class="text-success">$100000</h6>
-            </article>
-        </article>
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="img/producto2.png" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    <h5 class="card-title">Cestas de Época</h5>
-                    <img class="member-avatar rounded-circle " src="img/persona.png" height="40" width="40">
-                </section>
-                <h6 class="text-success">$100000</h6>
-            </article>
-        </article>
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="img/producto3.png" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    <h5 class="card-title">Cestas de Época</h5>
-                    <img class="member-avatar rounded-circle " src="img/persona.png" height="40" width="40">
-                </section>
-                <h6 class="text-success">$100000</h6>
-            </article>
-        </article>
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="img/producto2.png" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    <h5 class="card-title">Cestas de Época</h5>
-                    <img class="member-avatar rounded-circle " src="img/persona.png" height="40" width="40">
-                </section>
-                <h6 class="text-success">$100000</h6>
-            </article>
-        </article>
-        <article class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;">
-            <img src="img/producto3.png" class="card-img-top" alt="img" height="300" width="200">
-            <article class="card-body">
-                <section class="d-flex justify-content-between">
-                    <h5 class="card-title">Cestas de Época</h5>
-                    <img class="member-avatar rounded-circle " src="img/persona.png" height="40" width="40">
-                </section>
-                <h6 class="text-success">$100000</h6>
-            </article>
-        </article>
-    </section>
+        </a> --}}
+
+
+
+
+
+
+
+
+
     <br>
     <section>
-    <x-footer />
+        <x-footer />
     </section>
 </section>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-crossorigin="anonymous"></script>
+integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>

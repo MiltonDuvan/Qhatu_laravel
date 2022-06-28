@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\artesania;
+use App\Models\imagen;
 use Illuminate\Http\Request;
 
 class ArtesaniaController extends Controller
@@ -12,11 +13,21 @@ class ArtesaniaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function index(imagen $imagen)
     {
-        return view('index.index');
+         $artesanias=artesania::all();
+         $imagens=imagen::all();
+        //$imagens=artesania::join("imagens","artesanias.id","=","imagens.artesanias_id")->where("artesanias.id",1)->select('imagen')->get();
+         return view('index.index',compact('artesanias','imagens'));
+
     }
 
+    public function show(artesania $artesania)
+    {
+
+        return view('detail_craft.detail_craft');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -24,7 +35,7 @@ class ArtesaniaController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -44,10 +55,7 @@ class ArtesaniaController extends Controller
      * @param  \App\Models\artesania  $artesania
      * @return \Illuminate\Http\Response
      */
-    public function show(artesania $artesania)
-    {
-        return view('detail_craft.detail_craft');
-    }
+
 
     /**
      * Show the form for editing the specified resource.

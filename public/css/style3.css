@@ -1,0 +1,24 @@
+ button{
+     width: 20%;
+     background-color: #020246;
+     color: aliceblue;
+ }
+ select{
+     width: 30%;
+     padding: 0.4%;
+ }
+ .nn{
+     background-color: #020246;
+     color: white;
+     
+     
+ }
+ img{
+     width: 10%;
+ }
+ .selec{
+     margin-top: 10px;
+     margin-bottom: 10px;
+     
+ }
+ 
