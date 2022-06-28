@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\etnia;
 use App\Models\indigena;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class IndigenaController extends Controller
      */
     public function index()
     {
-        return view('profile_detail.profile_indigena');
+        return view('login.session');
+        // return view('profile_detail.profile_indigena',);
     }
 
     /**
@@ -24,7 +26,9 @@ class IndigenaController extends Controller
      */
     public function create()
     {
-        return view('register.register_indigena');
+        $etnias = etnia::All();
+        return view('register.register',compact('etnias'));
+       
     }
 
     /**
@@ -35,8 +39,20 @@ class IndigenaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $indigena= new indigena;
+        $indigena->nombres=$request->nombres;
+        $indigena->correo=$request->correo;
+        $indigena->contraseña=$request->contraseña;
+        $indigena->telefono=$request->telefono;
+        $indigena->edad=$request->edad;
+        $indigena->descripcion=$request->descripcion;
+        $indigena->certificado=$request->certificado;
+        $indigena->calificacion=$request->calificacion;
+        $indigena->etnias_id=$request->etnias_id;
+        $indigena->save();
+        return redirect()->route('register.create');
     }
+    
 
     /**
      * Display the specified resource.
@@ -69,7 +85,7 @@ class IndigenaController extends Controller
      */
     public function update(Request $request, indigena $indigena)
     {
-        return view('login.session');
+      
     }
 
     /**

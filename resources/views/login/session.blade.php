@@ -30,7 +30,7 @@
             <hr>
             <section class="pie-form">
                 <a href="#">¿Perdiste tu contraseña?</a>
-                <a href="{{url('register')}}">¿No tienes Cuenta? Registrate</a>
+                <a href="{{url('register/create')}}">¿No tienes Cuenta? Registrate</a>
                 <hr>
                 <section class="login_red_social">
                     <h2>Iniciar session con:</h2>
