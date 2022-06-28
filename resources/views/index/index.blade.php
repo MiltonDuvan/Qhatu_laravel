@@ -3,25 +3,18 @@
 </div>
 
 <section class="fondo cuerpo_index">
-    <section class=" container-fluid d-flex flex-wrap">
-        <article class="col-12  col-md-6  col-xxl-6 ">
+    <section class="container-fluid d-flex justify-content-evenly">
+        <article class="texto col-12  col-md-6  col-xxl-6">
             <h1>Artesanias Indigenas</h1>
             <h2>Descubre los tesoros artesanales escondidos en el cauca</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit saepe laboriosam iure voluptatibus
-                hic rem, cupiditate provident ex sapiente debitis fugiat, vel deserunt earum ipsa quam distinctio, aut
-                maiores excepturi?
-                Dignissimos blanditiis mollitia consectetur expedita deserunt aspernatur ipsa, fuga ab tempora obcaecati
-                fugiat repudiandae atque! Doloremque, laborum! Odio iusto quis dolore voluptate earum soluta, sapiente
-                sit, distinctio aliquid porro laudantium?
-                Nisi, impedit. Voluptatibus impedit consequuntur, illum laudantium nam commodi porro cumque, sequi
-                explicabo rem saepe quisquam omnis vel asperiores dicta alias! Cupiditate at officiis ipsam provident
-                maxime corrupti unde earum!
-                Autem nisi veritatis nobis illum. Blanditiis officia ipsa placeat numquam at suscipit sunt fuga et animi
-                maxime veniam expedita dolorem maiores illo atque deleniti ut, asperiores natus hic eius inventore.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit saepe laboriosam iure voluptatibus hic rem, cupiditate provident ex sapiente debitis fugiat, vel deserunt earum ipsa quam distinctio, aut maiores excepturi?
+            Dignissimos blanditiis mollitia consectetur expedita deserunt aspernatur ipsa, fuga ab tempora obcaecati fugiat repudiandae atque! Doloremque, laborum! Odio iusto quis dolore voluptate earum soluta, sapiente sit, distinctio aliquid porro laudantium?
+            Nisi, impedit. Voluptatibus impedit consequuntur, illum laudantium nam commodi porro cumque, sequi explicabo rem saepe quisquam omnis vel asperiores dicta alias! Cupiditate at officiis ipsam provident maxime corrupti unde earum!
+            Autem nisi veritatis nobis illum. Blanditiis officia ipsa placeat numquam at suscipit sunt fuga et animi maxime veniam expedita dolorem maiores illo atque deleniti ut, asperiores natus hic eius inventore.
             </p>
         </article>
-        <section id="carouselExampleControls" class="carrusel carousel slide col-12  col-md-6  col-xxl-6"
+        <section id="carouselExampleControls" class="carrusel  carousel slide col-12  col-md-6  col-xxl-6"
             data-bs-ride="carousel">
             <article class="carousel-inner">
                 <article class="carousel-item active">
@@ -50,16 +43,15 @@
         </section>
     </section>
 
-    <section class="container-fluid d-flex  justify-content-evenly row row-cols-4">
-        <ul class="product-list grid-products equal-container">
-            <section class="d-flex justify-content-between">
+    <section class=" container-fluid d-flex  justify-content-evenly row row-cols-4">
+        <ul class="product-list grid-products equal-container text-decoration-none">
+            <section class=" container-fluid d-flex  justify-content-evenly row row-cols-2">
                 @foreach ($artesanias as $artesania)
-                <li>
-                    <a href="{{ url('detail_craft') }}"class=" card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4 text-decoration-none"
+                <article class="">
+                    <a href="{{ url('detail_craft') }}"class="card p-4 pt-5 mt-5 shadow-lg p-3 mb-5 rounded-4" style="width: 22rem;"
                     style="width: 22rem;">
                     @foreach ($imagens as $imagen)
-                        <img src="{{$imagen->imagen}}" class="card-img-top" alt="img" height="300"
-                         width="200">
+                        <img src="{{$imagen->imagen}}" class="card-img-top" alt="img" height="300" width="200">
                     @endforeach
                     <article class="card-body">
                         <section class="d-flex justify-content-between">
@@ -70,7 +62,7 @@
                         <h6 class="text-success"> $ {{$artesania->precio }}</h6>
                     </article>
                 </a>
-                </li>
+            </article>
                 @endforeach
 
         </ul>
@@ -99,11 +91,13 @@
 
 
     <br>
-    <section>
-        <x-footer />
-    </section>
+
 </section>
+<div class="container m-0 p-0">
+    <x-footer />
+</div>
 </section>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
